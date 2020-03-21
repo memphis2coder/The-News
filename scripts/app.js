@@ -84,9 +84,7 @@ var month = date.getMonth() + 1;
 var day = date.getDate();
 var year = date.getFullYear();
 var show = month + "/" + day + "/" + year;
-
 console.log(show);
-
 document.getElementById('date').innerHTML = show;
 
 

@@ -1,6 +1,6 @@
 const API_KEY = '88cbb71bd9c54332899953287b7b567e';
 const urlS = `http://newsapi.org/v2/top-headlines?country=us&category=sports&pageSize=1&apiKey=${API_KEY}`; // sports news
-const urlBase = `http://newsapi.org/v2/everything?q=baseball&pageSize=4&apiKey=${API_KEY}` //baseball news
+const urlBase = `http://newsapi.org/v2/everything?q=mlb&pageSize=4&apiKey=${API_KEY}` //baseball news
 const urlFoot = `http://newsapi.org/v2/everything?q=football&pageSize=4&apiKey=${API_KEY}` // football news
 
 // sports news
@@ -76,6 +76,15 @@ async function football() {
     })
     .catch((err) => console.log(err))
 }
+
+// show to the date 
+var date = new Date();
+var month = date.getMonth() + 1;
+var day = date.getDate();
+var year = date.getFullYear();
+var show = month + "/" + day + "/" + year;
+console.log(show);
+document.getElementById('date').innerHTML = show;
 
 sports();
 baseball();

@@ -1,6 +1,7 @@
 const API_KEY = '88cbb71bd9c54332899953287b7b567e';
 const urlE = `http://newsapi.org/v2/top-headlines?country=us&category=entertainment&pageSize=6&apiKey=${API_KEY}` // entertainment
 const urlM = `http://newsapi.org/v2/everything?q=movies&pageSize=4&apiKey=${API_KEY}`
+const urlTv = `http://newsapi.org/v2/everything?q=cable&pageSize=4&apiKey=${API_KEY}`
 
 // entertainment news
 async function et() {
@@ -19,20 +20,7 @@ async function et() {
         document.getElementById('info').innerHTML = info;
         document.getElementById('link').href = link;
 
-    // function entTemplate(ent) {
-    //     return `
-    //     <hr>
-    //         <div class=card>
-    //             <img src='${ent.urlToImage}'>
-    //             <p class='card-text' id='title'>${ent.title}</p>
-    //             <a href='${ent.url}' target='_blank'>read more</a>
-    //         </div>
-    //     `
-    // }
-
-    // document.getElementById('movies').innerHTML = `
-    //     ${ent.map(entTemplate).join('')}
-    // `
+    
 };
 
 // movies section
@@ -58,5 +46,38 @@ async function movies() {
     `
 }
 
+// tv section
+async function tv() {
+    const response = await fetch(urlTv);
+    const data = await response.json();
+    var tv = data.articles;
+    console.log(tv)
+
+    function tvTemplate(tv) {
+        return `
+        
+            <div class=card>
+                <img src='${tv.urlToImage}'>
+                <p class='card-text' id='title'>${tv.title}</p>
+                <a href='${tv.url}' target='_blank'>read more</a>
+            </div>
+        `
+    }
+
+    document.getElementById('gridF').innerHTML = `
+        ${tv.map(tvTemplate).join('')}
+    `
+}
+
+// show to the date 
+var date = new Date();
+var month = date.getMonth() + 1;
+var day = date.getDate();
+var year = date.getFullYear();
+var show = month + "/" + day + "/" + year;
+console.log(show);
+document.getElementById('date').innerHTML = show;
+
 et();
 movies();
+tv();
