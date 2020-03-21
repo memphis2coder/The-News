@@ -62,6 +62,15 @@ hr {
 #header .nav-menu li:hover {
     text-decoration: underline;
 }
+#date {
+    text-align: right;
+    font-size: calc(10px + .4vw);
+}
+@media (max-width: 600px) {
+    #date {
+        display: none;
+    }
+}
 
 /* Main */
 #main .container{
@@ -81,9 +90,9 @@ hr {
 #main .grid-title {
     color: var(--color-blue);
 }
-#main .latest .card {
+/* #main .latest .card {
     text-align: center;
-}
+} */
 #main .card img {
     width: 100%;
     object-fit: cover;
@@ -121,17 +130,17 @@ hr {
     #main .grid-template {
         grid-template-columns: 1fr;
     }
-    #main .main {
+    #main .top {
         text-align: center;
         order: 1;
     }
-    #main .latest {
+    #main .sports {
         text-align: center;
-        order: 2;
+        order: 0;
     }
-    #main .most {
+    #main .entertainment {
         text-align: center;
-        order: 3;
+        order: 0;
     }
 }
 
@@ -142,4 +151,143 @@ hr {
     font-size: 14px;
     text-align: center;
     color: lightgrey;
+}
+
+/********************* 
+    sports page styles 
+**********************/
+.sportsTwo .card  {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+.sportsTwo .card {
+    text-align: center;
+}
+.sportsTwo #title {
+    font-size: calc(12px + .5vw);
+}
+.sportsTwo #info {
+    font-size: calc(11px + .3vw);
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+.sportsTwo #link {
+    padding-bottom: 10px;
+}
+@media (max-width: 600px) {
+    .sportsTwo .card {
+        width: 100%;
+    }
+}
+#grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+}
+#grid .card {
+    margin-top: 8%;
+    border: 1px solid lightgrey;
+    height: 80%;
+    text-align: center;
+}
+#grid img {
+    height: 50%;
+}
+@media (max-width: 600px) {
+    #grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-gap: 50px;
+    }
+    #grid img {
+        height: 100%;
+    }
+}
+#gridF {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+    padding-bottom: 60px;
+}
+#gridF img {
+    height: 50%;
+}
+#gridF .card {
+    border: 1px solid lightgrey;
+    height: 100%;
+    text-align: center;
+}
+
+.footerS {
+    margin-top: 0px;
+}
+@media (max-width: 768px) {
+    #grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+    #gridF {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+}
+@media (max-width: 600px) {
+    #grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    #gridF {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-gap: 125px;
+    }
+    #gridF img {
+        height: 100%;
+    }
+    .footerS {
+        margin-top: 0px;
+    }
+}
+
+/********************* 
+    entertainment page styles 
+**********************/
+.et .card  {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+.et .card {
+    text-align: center;
+}
+.et #title {
+    font-size: calc(12px + .5vw);
+}
+.et #info {
+    font-size: calc(11px + .3vw);
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+.et #link {
+    padding-bottom: 10px;
+}
+@media (max-width: 600px) {
+    .et .card {
+        width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    #movies .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-gap: 20px;
+    }
 }

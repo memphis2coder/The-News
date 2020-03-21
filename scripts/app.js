@@ -5,7 +5,7 @@ const urlE = `http://newsapi.org/v2/top-headlines?country=us&category=entertainm
 
 
 // sports news
-async function sports() {
+function sports() {
     fetch(urlS)
     .then((res) => res.json())
     .then((data) => {
@@ -78,6 +78,17 @@ async function et() {
     `
 };
 
+// show to the date 
+var date = new Date();
+var month = date.getMonth() + 1;
+var day = date.getDate();
+var year = date.getFullYear();
+var show = month + "/" + day + "/" + year;
+
+console.log(show);
+
+document.getElementById('date').innerHTML = show;
+
 
 sports();
 main();
@@ -86,16 +97,7 @@ et();
 
 
 
-/*
-<div class="sports">
-    <h4 class="grid-title">Sports</h4>
-    <hr>
-    <div class="card">
-        <img class="card-image" src="https://static01.nyt.com/images/2020/03/13/arts/19virus-opera-1/19virus-opera-1-facebookJumbo.jpg" alt="image">
-        <p class="card-text">{Data.title}</p>
-    </div>
-</div>
-*/
+
 
 
 
